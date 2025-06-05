@@ -7,15 +7,17 @@
 ## Использование
 
 ```bash
-python3 manager.py <TOKEN> <CHAT_ID> "Сообщение" --at <TIMESTAMP>
+python3 manager.py [TOKEN] <CHAT_ID> "Сообщение" --at <TIMESTAMP>
 ```
+
+Если аргумент `TOKEN` опущен, используется встроенное значение.
 
 Параметр `--at` задаёт Unix‑время, когда сообщение будет отправлено. Если параметр не указан, сообщение отправится сразу.
 
 ## Пример
 
 ```bash
-python3 manager.py 123:ABC-DEF1234ghIkl-zyx57W2v1u123ew11  @mychannel "Привет, мир" --at 1716239020
+python3 manager.py 6851627781:AAFVq0BDZoQBgDshDBIhKwMdmCyCVRXVEIk @mychannel "Привет, мир" --at 1716239020
 ```
 
 Скрипт зависит только от стандартной библиотеки Python и может запускаться без дополнительных пакетов.

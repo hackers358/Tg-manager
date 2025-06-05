@@ -3,6 +3,11 @@ import urllib.request
 import urllib.parse
 
 
+# Default bot token provided for convenience. You may override it via
+# the command-line argument.
+DEFAULT_TOKEN = "6851627781:AAFVq0BDZoQBgDshDBIhKwMdmCyCVRXVEIk"
+
+
 def send_message(token: str, chat_id: str, text: str) -> None:
     """Send a text message to the specified chat."""
     url = f"https://api.telegram.org/bot{token}/sendMessage"
@@ -23,7 +28,8 @@ if __name__ == "__main__":
     import argparse
 
     parser = argparse.ArgumentParser(description="Simple Telegram channel manager.")
-    parser.add_argument("token", help="Telegram bot token")
+    parser.add_argument("token", nargs="?", default=DEFAULT_TOKEN,
+                        help="Telegram bot token")
     parser.add_argument("chat_id", help="ID of the channel or chat")
     parser.add_argument("message", help="Message text")
     parser.add_argument("--at", type=float, default=time.time(), help="UNIX timestamp when the message should be sent")
