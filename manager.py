@@ -1,8 +1,6 @@
-import json
 import time
 import urllib.request
 import urllib.parse
-from datetime import datetime
 
 
 def send_message(token: str, chat_id: str, text: str) -> None:
